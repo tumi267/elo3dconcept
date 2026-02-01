@@ -9,7 +9,7 @@ const observer = new IntersectionObserver((entries, obs) => {
       }
   });
 }, {
-  threshold: 0.3 // triggers when 30% of the element is visible
+  threshold:1 // triggers when 30% of the element is visible
 });
 
 services.forEach(service => observer.observe(service));
