@@ -1,0 +1,245 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Google Sans Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "ROND" 0;
+}
+.nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: black;
+    height: 120px;
+}
+.welcome_mesage{
+    height: 75vh;
+    text-align: right;
+    padding-right: 2em;
+    align-items: center;
+    font-size: 64px;
+}
+.about{
+    /* width: 40%;   */
+    text-align: left;
+    color: red;
+}
+.background{
+    background: linear-gradient(
+        to bottom,
+        rgb(251, 217, 247),
+        transparent 80%
+    );
+    position: fixed;
+    top: 120;
+    left: 55%;
+    height: 75vh;
+    width: 15rem;
+    z-index: -1;
+}
+#hero {
+    display: grid;
+    position: relative;
+    grid-template-columns:3fr 6fr 3fr 1fr;
+    grid-template-areas:
+      "p1 heroImage . ."
+      "p3  heroImage p2 ."
+      ". heroImage . .";
+    width: 72%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero_image {
+    grid-area: heroImage;
+    position: relative;
+  }
+  
+  .aboutP1 { grid-area: p1; 
+    position: absolute;
+    top:10em;
+    left: -5em;
+}
+  .aboutP2 { grid-area: p2; 
+    position: absolute;
+    top: 0em;
+    left: 5em;
+    }
+  .aboutP3 { grid-area: p3; 
+    position: absolute;
+    top: 8em;
+    left: 10em;
+    }
+  
+  .heroImage {
+    height: 100vh;
+  }
+.hero_overlay{
+    position: absolute;
+    top: 0;
+    right: 0%;
+    width: 40%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    z-index: 2;
+}
+.overlay_image{
+    position:absolute;
+    top: 50%;
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: -1;
+  }
+  #services {
+    display: grid;
+    position: relative;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-areas:
+      "s1 . ."
+      ".  . s2 "
+      "s3 . . "
+      ". . s4";
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .s1,
+  .s2,
+  .s3,
+  .s4{
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+  }
+  .s1 { grid-area: s1; 
+    }
+    .s2 { grid-area: s2; 
+    }
+    .s3 { grid-area: s3; 
+    }
+    .s4 { grid-area: s4; 
+    }
+    .service.visible {
+        opacity: 1;
+      }
+      #team {
+        position: relative;
+        height: 300px; /* adjust as needed */
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .team {
+        position: absolute;
+        height: 250px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        transition: all 0.5s ease;
+        cursor: pointer;
+        border: 1px solid;
+        margin: 0 auto;
+        --team-left: 0rem;
+        background-color: aliceblue;
+      }
+      .team_image{
+        position: relative;
+      }
+      .t1,.t2,.t3,.t4,.t5{
+        width: 5rem;
+        overflow: hidden;
+      }
+      .t1image>img{
+       position: absolute;
+       height: 350px;
+       top: -3em;
+       left:-13em;
+       
+       
+      }
+      .t2image>img{
+        position: absolute;
+        height: 350px;
+        top: -2em;
+        left:-13em;
+      }
+      .t3image>img{
+        position: absolute;
+        height: 350px;
+      }
+      .t4image>img{
+        position: absolute;
+        height: 350px;
+      }
+      .t5image>img{
+        position: absolute;
+        height: 350px;
+        top: -2em;
+        left:-20em;
+      }
+      /* Initial overlapping offsets */
+     .t1 { --team-left: 20rem; left: var(--team-left); height: 250px;  }
+     .t2 { --team-left: 25.5rem; left: var(--team-left); height: 300px;}
+     .t3 { --team-left: 31rem; left: var(--team-left);height: 250px; }
+     .t4 { --team-left: 36.5rem; left: var(--team-left);height: 150px; }
+     .t5 { --team-left: 42rem; left: var(--team-left); height: 250px;}
+      
+      /* Expanded state */
+      .team.expanded {
+        height: 75vh;
+        width: 100%;
+        z-index: 10 ;
+        left:calc(var(--team)*-1)
+      }
+      .clients-track img {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+      }
+      .clients-track img.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .clients-wrapper{
+        overflow: hidden; /* hides the logos that move outside the viewport */
+        width: 100%;
+        padding: 2rem 2rem;
+      }
+      .clientImage{
+        height: 250px;
+        width: 250px;
+      }
+      .clients-track {
+        display: inline-flex;
+        gap: 5em; /* your spacing is fine */
+        white-space: nowrap;
+        animation: scrollClients 20s linear infinite;
+      }
+      .clientImage:hover {
+        height: 260px;
+        width: 260px;
+        transition: transform 0.3s ease;
+    }
+      .clients-track img:hover {
+        filter: none;
+        opacity: 1;
+      }
+      @keyframes scrollClients {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); } /* adjust if repeating logos */
+      }
