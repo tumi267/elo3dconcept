@@ -256,7 +256,7 @@ canvas {
         width: 85%;
       }
         #about {
-        margin-left: 1em;
+        margin-left: 0em;
         }
       
         .aboutP1,
@@ -273,8 +273,8 @@ canvas {
           left:-8em;
       }
       .aboutP3{
-        top:-14em;
-        left:14em;
+        top:-16em;
+        left:12em;
         z-index: 3;
       }
         .heroImage {
