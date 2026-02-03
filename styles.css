@@ -17,10 +17,11 @@ body{
     left: 0;
     background-color: black;
     height: 120px;
+    width: 100%;
 }
 .welcome_mesage{
     height: 75vh;
-    text-align: right;
+    text-align: left;
     padding-right: 2em;
     align-items: center;
     font-size: 64px;
@@ -43,7 +44,7 @@ body{
     width: 15rem;
     z-index: -1;
 }
-#hero {
+#about {
     display: grid;
     position: relative;
     grid-template-columns:3fr 6fr 3fr 1fr;
@@ -242,4 +243,58 @@ canvas {
       @keyframes scrollClients {
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); } /* adjust if repeating logos */
+      }
+      @media (max-width: 768px) {
+        .welcome_mesage{
+          font-size: 24px;
+      }
+      .background {
+        left:63%;
+        width: 10rem;
+      }
+      .clients-wrapper{
+        width: 85%;
+      }
+        #hero {
+          /* width: 100%; */
+        }
+      
+        .aboutP1,
+        .aboutP2,
+        .aboutP3 {
+          position: relative;
+          top: auto;
+          left: auto;
+          margin: 1.5rem 1rem;
+          text-align: left;
+        }
+      .aboutP2{
+          top:0;
+          left:-8em;
+      }
+      .aboutP3{
+        top:-14em;
+        left:14em;
+        z-index: 3;
+      }
+        .heroImage {
+          position: absolute;
+          height:36vh;
+          left: -11em;
+        }
+        .hero_overlay {
+          left: 65px;
+          width: 8em;
+      }
+      #team{
+        width: 95%;
+      }
+      .t1,.t2,.t3,.t4,.t5{
+        width: 4rem;
+      }
+      .t1 { --team-left: 0rem;  }
+      .t2 { --team-left: 4.5rem;}
+      .t3 { --team-left: 9rem;  }
+      .t4 { --team-left: 13.5rem; }
+      .t5 { --team-left: 18rem; }
       }

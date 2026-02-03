@@ -107,10 +107,47 @@ function animate() {
 animate()
 
 // --- Responsive ---
+updatePetalForScreen();
+
+// Update on resize
 window.addEventListener('resize', () => {
-    const w = window.innerWidth
-    const h = window.innerHeight
-    renderer.setSize(w,h)
-    camera.aspect = w/h
-    camera.updateProjectionMatrix()
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
+  renderer.setSize(w, h);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+
+  updatePetalForScreen();
+
 })
+function updatePetalForScreen() {
+    const isMobile = window.innerWidth < 768;
+  
+    if (isMobile) {
+      // Push the camera back and scale down the petal
+      camera.position.z = 7;
+      petal.scale.set(0.6, 0.6, 0.6);
+  
+      // Optional: adjust target positions so sections make sense
+      for (let key in sectionTransforms) {
+        sectionTransforms[key].x *= 0.5;
+        sectionTransforms[key].y *= 0.5;
+        sectionTransforms[key].z *= 0.5;
+        sectionTransforms[key].scale *= 0.6;
+      }
+  
+    } else {
+      camera.position.z = 5;
+      petal.scale.set(1, 1, 1);
+  
+      // Reset section transforms if needed
+      sectionTransforms[0] = { x: 2, y: 0, z: 0, scale: 0.5 };
+      sectionTransforms[1] = { x: -2, y: 0, z: 1, scale: 0.3 };
+      sectionTransforms[2] = { x: -1, y: 0, z: -2, scale: 0.5 };
+      sectionTransforms[3] = { x: 3, y: 0, z: 0, scale: 0.2 };
+      sectionTransforms[4] = { x: 3, y: -2, z: 0, scale: 0.2 };
+      sectionTransforms[5] = { x: 3, y: -2, z: 0, scale: 0.2 };
+    }
+  }
+  
