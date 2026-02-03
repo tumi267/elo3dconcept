@@ -255,8 +255,8 @@ canvas {
       .clients-wrapper{
         width: 85%;
       }
-        #hero {
-          /* width: 100%; */
+        #about {
+        margin-left: 1em;
         }
       
         .aboutP1,
