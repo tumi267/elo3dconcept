@@ -12,7 +12,16 @@
 </head>
 <body>
     <nav class="nav">
-&nbsp;
+        <span><img id="logo" src='https://paragonview.co.za/wp-content/uploads/2024/05/paragonview-logo-1.svg' alt='logo'/></span>
+        <span>
+            <ul class="links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+        </span>
     </nav>
     <div>
         
@@ -95,7 +104,36 @@
           <img class="clientImage visible" loading="lazy" src="public/assets/sanral.webp" alt="Client 4"/>
         </div>
       </div></section>
-    <section id="contact">contact</section>
+    <section id="contact">
+        <form class="contact-form" novalidate>
+        <h3>Contact</h3>
+    
+        <label>
+          <h4 class="sr-only">Email</h4>
+          <input
+          class="input_form"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <span class="error-message" aria-live="polite"></span>
+        </label>
+    
+        <label>
+          <h4 class="sr-only">Message</h4>
+          <textarea
+            class="input_form"
+            name="message"
+            placeholder="Brief here"
+            rows="4"
+            required
+          ></textarea>
+          <span class="error-message" aria-live="polite"></span>
+        </label>
+    
+        <button type="submit" id="submit">Submit</button>
+      </form></section>
     </div>
     <script type="importmap">
         {

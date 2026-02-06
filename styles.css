@@ -19,6 +19,51 @@ body{
     height: 120px;
     width: 100%;
 }
+.nav{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 115px;
+  align-items: center;
+  padding: 0 1em;
+  border: #4B4949 1px solid;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: black;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+/* animation: hideNav linear forwards; */
+/* animation-timeline: scroll(); */
+/* animation-range: 0 200px; */
+}
+.nav a:hover {
+color: #f0f0f0; /* accent color */
+transform: scale(1.05);
+transition: 0.3s ease;
+}
+.nav.nav--hidden {
+transform: translateY(-100%);
+opacity: 0;
+}
+.links{
+  display: flex;
+  justify-content: space-between;
+}
+.contact-form {
+  width: 100%;
+  max-width: 480px;
+  display: grid;
+  gap: 1rem;
+ 
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5em;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color: #4B4949;
+  cursor: pointer;
+}
 .welcome_mesage{
     height: 75vh;
     text-align: left;
